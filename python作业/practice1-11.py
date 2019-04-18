@@ -21,14 +21,13 @@ def getHtml(url):
         print("访问目标页面异常!")
 
 def getInfo(html):
-    uinfo=[]
+
     soup=BeautifulSoup(html,'html.parser')
     dic={
         '发帖人':[] ,
         '主题': [],
         '回复数':[] ,
     }
-    print(soup.select('.threadlist_rep_num')[0].get_text())
 
     for x in range(len(soup.select('.threadlist_rep_num'))):
         dd=soup.select('.j_th_tit ')[x].get_text()
@@ -44,7 +43,7 @@ def save(dic):
     pd.DataFrame(dic).to_csv('D:\pythonwork\practice.csv', mode='a', header=False, encoding='utf_8_sig')
 
 if __name__ == '__main__':
-    for x in range(10):#爬取抗压吧前10页的帖子
+    for x in range(4):#爬取抗压吧前10页的帖子
         z=str(x*50)
         print(z)
         url=('https://tieba.baidu.com/f?kw=%E6%8A%97%E5%8E%8B&&ie=utf-8&pn='+z)

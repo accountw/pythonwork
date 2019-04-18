@@ -88,22 +88,12 @@ def shiyan3():
     Color=['blue','green','red','yellow','pink']
     for x in range(5):
         label=(str(i[x][0])+'.'+str(i[x][1]))
-
         plt.plot(b[x].index, b[x],color=Color[x], label=label)
-
     plt.legend(loc='upper left')
     plt.xlabel(u'日期', fontproperties=font)
     plt.ylabel('pm2.5')
     plt.title(u'pm2.5趋势', fontproperties=font)
     plt.show()
-
-
-
-
-
-
-
-
     '''
     for x in range(0, 5):
         j=0
@@ -116,7 +106,7 @@ def shiyan3():
                     j=j+1
     '''
 if __name__ == '__main__':
-    # avgpm() #第一个
-    #avgTemp() #第一个
+     # avgpm() #第一个 ,平均pm
+    avgTemp() #第一个,平均气温
     shiyan2() #第二个
-    # shiyan3()
+    shiyan3()
