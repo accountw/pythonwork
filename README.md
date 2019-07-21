@@ -1,1 +1,1 @@
-# python作业，平时的python联系代码
+# python作业，平时的python练习代码
